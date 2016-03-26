@@ -36,7 +36,7 @@ To install nodemon:
 ```sh
 $ npm install -g nodemon
 ```
-4. Check it at http://localhost:3001
+ 4. Check it at [http://localhost:3001]
 
 License
 ----
@@ -56,3 +56,4 @@ MIT
    [BrowserSync]: <https://www.browsersync.io/>
    [Node-orm]: <https://github.com/dresende/node-orm2>
    [SocketIO]: <http://socket.io/>
+   [http://localhost:3001]: <http://localhost:3001>
