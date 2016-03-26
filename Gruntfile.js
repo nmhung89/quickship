@@ -9,7 +9,6 @@ module.exports = function(grunt) {
           },
           files: {
             "public/css/main.css": [
-                "public/bower_components/bootstrap/less/bootstrap.less",
                 "client/less/style.less"
             ]
           }
@@ -39,7 +38,6 @@ module.exports = function(grunt) {
             watchTask: true,
             proxy: {
               target: "http://localhost:3000",
-              port: 3000,
               ws: true
             }
         }

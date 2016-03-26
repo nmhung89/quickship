@@ -1,10 +1,10 @@
 # Quick Ship
 
-Quick Ship is a web application for users to post their shipping demand and show it for other people which are standing near the place then they can help to ship that item and earn money. This is ... not a serious project because I create it mainly to learn [ReactJS] and [ExpressJS]
+Quick Ship is a social interaction web application designed to connect people who are in need of delivering items quickly and economically with local people who are free and want to earn money by providing fast delivering services. This is ... not a serious project because I create it mainly to learn [ReactJS] and [ExpressJS]
 
 ### Feature
-  - Post a shipping request including description, from location, to location, image, price, phone number to contact.
-  - List shipping requests with above information + map to show the path and current user's position.
+  - Post a shipping request including title, from-location, to-location, price, phone number to contact.
+  - List shipping requests with above information + map to show the path.
   - A button beside each shipping request listing to mark it's shipped.
 
 ### Tech
@@ -12,6 +12,8 @@ Quick Ship is a web application for users to post their shipping demand and show
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework [@tjholowaychuk]
+* [Node-orm] - orm for node.js
+* [SocketIO] - real-time engine
 * [Grunt] - the JS task runner
 * [BrowserSync] - time-saving synchronised browser testing
 * [Bower] - package manager for the web
@@ -46,3 +48,5 @@ MIT
    [Grunt]: <http://gruntjs.com/>
    [Bower]: <http://bower.io/>
    [BrowserSync]: <https://www.browsersync.io/>
+   [Node-orm]: <https://github.com/dresende/node-orm2>
+   [SocketIO]: <http://socket.io/>
