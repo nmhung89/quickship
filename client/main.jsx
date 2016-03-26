@@ -60,14 +60,7 @@ var ShippingList = React.createClass({
             }.bind(this)
         });
     },
-    handleShipRemove: function(shipId) {
-        $.ajax({
-            url: '/api/remove-shipping-request/',
-            type: 'delete',
-            data: {'shipId': shipId},
-            dataType: 'json',
-            cache: false
-        });
+    updateShippingData: function(shipId) {
         var shippings = this.state.data;
         for (var idx=0; idx < shippings.length; idx++) {
             var shipInfo = shippings[idx];
@@ -78,12 +71,27 @@ var ShippingList = React.createClass({
         }
         this.setState({data: shippings});
     },
+    handleShipRemove: function(shipId) {
+        $.ajax({
+            url: '/api/remove-shipping-request/',
+            type: 'delete',
+            data: {'shipId': shipId},
+            dataType: 'json',
+            cache: false
+        });
+        this.updateShippingData(shipId);
+        var socket = io();
+        socket.emit('ShippingDeleted', shipId);
+    },
     componentDidMount: function() {
         this.loadData();
         var socket = io();
         var _this = this;
         socket.on('NewShipping', function(message) {
             _this.setState({data: [message].concat(_this.state.data)});
+        });
+        socket.on('RemoveShipping', function(shipId) {
+            _this.updateShippingData(shipId);
         });
     },
     render: function() {
@@ -221,15 +229,18 @@ ReactDOM.render(
     <div>
         <Navbar>
             <Navbar.Header>
-              <Navbar.Brand>
-                <a href="/">Quick Ship</a>
-              </Navbar.Brand>
+                <Navbar.Brand>
+                    <a href="/">Quick Ship</a>
+                </Navbar.Brand>
+                <Navbar.Toggle />
             </Navbar.Header>
-            <Nav>
-                <NavItem active eventKey={1} href="/">
-                    <span className="glyphicon glyphicon-home"/> Home
-                </NavItem>
-            </Nav>
+            <Navbar.Collapse>
+                <Nav>
+                    <NavItem active eventKey={1} href="/">
+                        <span className="glyphicon glyphicon-home"/> Home
+                    </NavItem>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
         <div className="container">
             <Row>

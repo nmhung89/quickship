@@ -6,6 +6,7 @@ Quick Ship is a social interaction web application designed to connect people wh
   - Post a shipping request including title, from-location, to-location, price, phone number to contact.
   - List shipping requests with above information + map to show the path.
   - A button beside each shipping request listing to mark it's shipped.
+  - Auto update new shipping list in real time.
 
 ### Tech
 * [ReactJS] - a JS lib for building interface
@@ -21,6 +22,9 @@ Quick Ship is a social interaction web application designed to connect people wh
 ### Development
 You need to have nodejs and npm (package manager for nodejs) installed in advance, it's quite easy, just google it.
 To run project for development:
+1. Update database user/password in server/app.js
+2. Create database `quickship`
+3. Run following commands
 ```sh
 $ npm install
 $ bower install
@@ -31,6 +35,7 @@ To install nodemon:
 ```sh
 $ npm install -g nodemon
 ```
+4. Check it at http://localhost:3001
 
 License
 ----

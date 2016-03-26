@@ -65,4 +65,7 @@ io.on('connection', function (socket) {
     socket.on('PostNewShipping', function (shipping) {
         io.emit('NewShipping', shipping);
     });
+    socket.on('ShippingDeleted', function (shipId) {
+        io.emit('RemoveShipping', shipId);
+    });
 });
