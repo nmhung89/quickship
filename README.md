@@ -36,7 +36,7 @@ To install nodemon:
 ```sh
 $ npm install -g nodemon
 ```
- 4. Check it at [http://localhost:3001]
+ Check it at [http://localhost:3001]
 
 License
 ----
