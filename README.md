@@ -22,6 +22,7 @@ Quick Ship is a social interaction web application designed to connect people wh
 ### Development
 You need to have nodejs and npm (package manager for nodejs) installed in advance, it's quite easy, just google it.
 To run project for development:
+
 1. Update database user/password in server/app.js
 2. Create database `quickship`
 3. Run following commands
